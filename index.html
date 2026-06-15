@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Undangan&mdash; Walimatul Khitan Romi & Arsya</title>
+	<title>Undangan&mdash; Walimatul Khitan Abdul Muiz Alfarizi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -39,6 +39,7 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -65,35 +66,29 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<body class="locked">
 		
-	<!-- <div class="fh5co-loader"></div>
-	
-	<div id="page"> -->
-	<!-- <nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2">
-					<div id="fh5co-logo"></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.html">Beranda</a></li>
-						<li><a href="about.html">Ucapan</a></li>
-						<li class="has-dropdown">
-							<a href="services.html">Lokasi</a>
-						</li>
-						<li class="has-dropdown">
-							<a href="gallery.html">Gallery</a>
-						</li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav> -->
+	<!-- Audio Element -->
+	<audio id="backsound" src="backsound.mp3" loop></audio>
 
+	<!-- Music Floating Control Button -->
+	<button id="music-toggle" class="music-control-btn" onclick="toggleMusic()" style="display: none;">
+		<!-- Playing/Unmuted Icon (SVG) -->
+		<svg id="music-on-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+			<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+			<path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+		</svg>
+		<!-- Muted Icon (SVG) -->
+		<svg id="music-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; display: none;">
+			<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+			<line x1="23" y1="9" x2="17" y2="15"></line>
+			<line x1="17" y1="9" x2="23" y2="15"></line>
+		</svg>
+	</button>
+
+	<div id="page">
+
+	<!-- 1. Cover / Pembuka -->
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -101,10 +96,14 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h3 style="font-size: 25px; color: white;" ><stong>السلام عليكم ورحمة الله وبركاته</stong></h3>
-							<h1 style="font-size: 45px;">Walimatul Khitan<br/>Rommy &amp; Arsya</h1>
-							<div class="simply-countdown simply-countdown-one"></div>
-							<p><a href="#" class="btn btn-default btn-sm">Lihat Undangan</a></p>
+							<!-- Islamic Ornament (Crescent Moon and Star) -->
+							<svg class="islamic-ornament" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 80px; fill: #dfba6b; margin: 0 auto 20px auto;">
+								<path d="M12.3,2a10,10,0,0,0-1.9,19.8,10.43,10.43,0,0,1,1.9-20.6M18,7.3l1,2.2,2.4.3-1.7,1.7.4,2.4-2.1-1.1-2.1,1.1.4-2.4-1.7-1.7,2.4-.3Z" />
+							</svg>
+							<h3 style="font-size: 23px; color: white; letter-spacing: 1px;" ><strong>السلام عليكم ورحمة الله وبركاته</strong></h3>
+							<h1 style="font-size: 55px; font-weight: 700; color: #dfba6b; margin-top: 15px;">Walimatul Khitan<br/><span style="font-size: 40px; display: block; margin-top: 15px; font-family: 'Playfair Display', serif; color: #ffffff;">Abdul Muiz Alfarizi</span></h1>
+							<p style="color: #ffffff; font-size: 18px; font-weight: 500; margin-bottom: 30px; letter-spacing: 1px;">Minggu, 28 Juni 2026</p>
+							<p><a href="javascript:void(0)" class="btn btn-default btn-sm" onclick="openInvitation()" style="border-radius: 30px; padding: 12px 30px; font-weight: 600;">Buka Undangan</a></p>
 						</div>
 					</div>
 				</div>
@@ -112,86 +111,22 @@
 		</div>
 	</header>
 
+	<!-- 2, 3, 4. Nama, Anak Dari, dan Ucapan Pembuka -->
 	<div id="fh5co-couple">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Assalamuallaikum Wr WB</h2>
-					<p>Dengan memohon Rahmat dan Ridho Allah Swt
-						Kami sekeluarga mengharap kehadiran
-						Bapak/Ibu/Saudara (i) untuk memberikan
-						Doa Restu pada acara 
-						<br/>
-						Walimatul Khitan Kedua Putra kami</p>
+			<div class="row card-container animate-box" style="margin: 0 15px;">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Assalamuallaikum Wr Wb</h2>
+					<p>Dengan memohon rahmat dan ridho Allah SWT, kami sekeluarga mengharapkan kehadiran Bapak/Ibu/Saudara/i untuk memberikan doa restu pada acara Walimatul Khitan putra kami.</p>
 				</div>
-			</div>
-			<div class="couple-wrap animate-box">
-				<div class="couple-half">
-					<div class="groom">
-						<img src="images/romi.png" alt="Romi Rizqi Ramadhan" class="img-responsive">
-					</div>
-					<div class="desc-groom">
-						<h3><strong>Romi Rizqi Ramadhan</strong></h3>
-						<p>Putra pertama</p>
-					</div>
-				</div>
-				<p class="heart text-center">&amp;</p>
-				<div class="couple-half">
-					<div class="bride">
-						<img src="images/arsya.png" alt="Arsya Amrillah" class="img-responsive">
-					</div>
-					<div class="desc-bride">
-						<h3>Arsya Amrillah</h3>
-						<p>Putra kedua</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Bismillah</span>
-					<h2>InsyaAllah akan dilaksanakan pada</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="display-t">
-					<div class="display-tc">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Khitan</h3>
-									<div class="event-col">
-										<i class="icon-clock"></i>
-										<span>06:00 WIB</span>
-									</div>
-									<div class="event-col">
-										<i class="icon-calendar"></i>
-										<span>Jum'at, 5 Mei 2022</span>
-										<span>6 Syawal 1443</span>
-									</div>
-									<p>Kp Bojong Ds Sepatnunggal Kec Sodong Hilir Kab Tasikmalaya <br/>(Kediaman Bapak Mimin Muhaemin)</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Tabligh Akbar</h3>
-									<div class="event-col">
-										<i class="icon-clock"></i>
-										<span>19:30 WIB</span>
-									</div>
-									<div class="event-col">
-										<i class="icon-calendar"></i>
-										<span>Jum'at, 5 Mei 2022</span>
-										<span>6 Syawal 1443</span>
-									</div>
-									<p>Kp Bojong Ds Sepatnunggal Kec Sodong Hilir Kab Tasikmalaya <br/>(Halaman Rumah Bapak Mimin Muhaemin)</p>
-								</div>
-							</div>
+				<div class="col-md-12 text-center">
+					<div class="couple-half-single">
+						<div class="single-child-img">
+							<img src="images/abdul_muiz.jpeg" alt="Abdul Muiz Alfarizi" class="img-responsive" style="display: inline-block;">
+						</div>
+						<div class="desc-single">
+							<h3><strong>Abdul Muiz Alfarizi</strong></h3>
+							<p>Anak dari Ade Ahmad Sodik dan Siti Hidayati</p>
 						</div>
 					</div>
 				</div>
@@ -199,365 +134,160 @@
 		</div>
 	</div>
 
-	<div id="fh5co-couple-story">
+	<!-- 5. Detail Acara -->
+	<div id="fh5co-event" class="fh5co-bg">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<!-- <span>We Love Each Other</span> -->
-					<h2>Haflah Tilawatil Quran</h2>
-					<p></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0">
-					<ul class="timeline animate-box">
-						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(images/salman.png);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">H. Salman Amrillah, S.Pd I</h3>
-									<span class="date">Qory</span>
-								</div>
-								<div class="timeline-body">
-									<p>Qori internasional<br/>Bandung</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-2.jpg);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">KH. TB Miftah Fauzi</h3>
-									<span class="date">Penceramah</span>
-								</div>
-								<div class="timeline-body">
-									<p>Pimpinan Ponpes Al Asya 'iroh<br/>Tasikmalaya</p>
-								</div>
-							</div>
-						</li>
-			    	</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-gallery" class="fh5co-section-gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Kenangan Kami</span>
-					<h2>Arsya dan Rommy</h2>
-					<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
-				</div>
-			</div>
-			<div class="row row-bottom-padded-md">
-				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
-						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpeg); "> 
-						<a href="images/gallery-1.jpeg">
-							<div class="case-studies-summary">
-								<span>Awal kelahiran</span>
-								<h2>Arysa Amrillah</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/arsya-2.jpeg); ">
-						<a href="images/arsya-2.jpeg" class="color-2">
-							<div class="case-studies-summary">
-								<span>Awal kelahiran</span>
-								<h2>Arsya Amrillah</h2>
-							</div>
-						</a>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/arsya-3.jpeg); ">
-						<a href="images/arsya-3.jpeg" class="color-3">
-							<div class="case-studies-summary">
-								<span>Balita</span>
-								<h2>Beautiful sunset</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/arsya-4.jpeg); ">
-						<a href="images/arsya-4.jpeg" class="color-4">
-							<div class="case-studies-summary">
-								<span>Jalan-jalan</span>
-								<h2>Company's Conference Room</h2>
-							</div>
-						</a>
-					</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-							<a href="#" class="color-3">
-								<div class="case-studies-summary">
-									<span>Pertama berjalan</span>
-									<h2>Useful baskets</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>45 Photos</span>
-									<h2>Skater man in the road</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>35 Photos</span>
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
-							<a href="#" class="color-5">
-								<div class="case-studies-summary">
-									<span>90 Photos</span>
-									<h2>Timer starts now!</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-							<a href="#" class="color-6">
-								<div class="case-studies-summary">
-									<span>56 Photos</span>
-									<h2>Beautiful sunset</h2>
-								</div>
-							</a>
-						</li>
-					</ul>		
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- 
-	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="display-t">
-					<div class="display-tc">
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-users"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="50" data-speed="500" data-refresh-interval="50">1</span>
-								<span class="counter-label">Undangan</span>
-
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-user"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="1000" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">We Catter</span>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-calendar"></i>
-								</span>
-								<span class="counter js-counter" data-from="0" data-to="402" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Events Done</span>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-clock"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Hours Spent</span>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-	<div id="fh5co-testimonial">
-		<div class="container">
-			<div class="row">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<span>Best Wishes</span>
-						<h2>Doa dari sahabat</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 animate-box">
-						<div class="wrap-testimony">
-							<div class="owl-carousel-fullwidth">
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-1.jpg" alt="user">
-										</figure>
-										<span>Mochamad Sofyan,S.Pd.<a href="#" class="twitter"><br/>Pimpinan Ponpes Al Ikrom</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-2.jpg" alt="user">
-										</figure>
-										<span>H Salman Amrillah<a href="#" class="twitter"><br/>Pengasuh Ponpes Tanjung Salam</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-3.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter"><br/>Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-services" class="fh5co-section-gray">
-		<div class="container">
-			
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Informasi pelaksanaan</h2>
-					<p>Berkenaan pandemi Covid-19 yang masih perlu di waspadai kami menghimbau kepada seluruh tamu undangan untuk bersama menegakan protokol kesehatan</p>
+					<span style="color: #dfba6b; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Bismillah</span>
+					<h2 style="margin-top: 10px;">InsyaAllah akan dilaksanakan pada</h2>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-md-6">
-					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-						<span class="icon">
-							<i class="icon-calendar"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Memakai masker</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center card-container">
+					<div class="event-wrap" style="border: none !important; box-shadow: none !important; padding: 0 !important; background: transparent !important; margin: 0;">
+						<h3 style="font-family: 'Playfair Display', serif; font-weight: 700; color: #2b3a4a; border-bottom: 2px solid #dfba6b; padding-bottom: 15px; margin-bottom: 25px;">Acara Khitanan</h3>
+						<div class="event-col" style="margin-bottom: 15px;">
+							<i class="icon-clock" style="font-size: 20px; color: #dfba6b;"></i>
+							<span style="display: block; margin-top: 5px; font-weight: 500;">Pukul ... WIB - selesai</span>
 						</div>
-					</div>
-
-					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-						<span class="icon">
-							<i class="icon-image"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Menjaga jarak</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<div class="event-col" style="margin-bottom: 25px;">
+							<i class="icon-calendar" style="font-size: 20px; color: #dfba6b;"></i>
+							<span style="display: block; margin-top: 5px; font-weight: 500;">Minggu, 28 Juni 2026</span>
 						</div>
-					</div>
-
-					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-						<span class="icon">
-							<i class="icon-video"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Mencuci Tangan</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-md-6 animate-box">
-					<div class="fh5co-video fh5co-bg" style="background-image: url("https://www.youtube.com/watch?v=Nf0c7u1Ywec"); ">
-						<a href="https://www.youtube.com/watch?v=Nf0c7u1Ywec" class="popup-youtube"><i class="icon-video2"></i></a>
-						<div class="overlay"></div>
+						<p style="font-size: 15px; line-height: 1.6; color: #666; margin-bottom: 0;">Kp. Warung Cikopi RT 06 RW 05, Desa Salebu, Kecamatan Mangunreja, Kabupaten Tasikmalaya</p>
 					</div>
 				</div>
 			</div>
-
-			
 		</div>
 	</div>
 
+	<!-- 6. Countdown Acara -->
+	<div id="fh5co-countdown" class="fh5co-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Menuju Hari Bahagia</h2>
+					<p>Siang dan malam berganti, waktu terus berjalan menuju hari khitanan putra tercinta kami:</p>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="simply-countdown simply-countdown-one"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+	<!-- 7. Amplop Digital -->
+	<div id="fh5co-digital-envelope" class="fh5co-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Amplop Digital</h2>
+					<p>Doa restu Bapak/Ibu/Saudara/i merupakan hadiah terbaik bagi kami. Namun apabila ingin memberikan tanda kasih, dapat melalui amplop digital berikut.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="envelope-card card-container text-center animate-box" style="margin-top: 0;">
+						<div style="font-size: 45px; color: #dfba6b; margin-bottom: 15px;">
+							<i class="icon-mail" style="font-size: 50px;"></i>
+						</div>
+						<div class="wallet-badge" style="display: inline-block; margin-bottom: 15px;">DANA</div>
+						<div class="account-details">
+							<p style="color: #888; font-size: 14px; margin-bottom: 5px;">Nomor E-Wallet</p>
+							<h3 id="dana-number" style="font-family: 'Outfit', sans-serif !important; font-weight: 700; color: #2b3a4a; font-size: 30px; letter-spacing: 1px; margin: 5px 0 15px 0;">089676578475</h3>
+							<p style="color: #555; margin-bottom: 25px;">Atas Nama: <strong>Ardi Salim</strong></p>
+						</div>
+						<div class="action-buttons" style="display: flex; flex-direction: column; gap: 12px; align-items: center; width: 100%;">
+							<button id="copy-btn" class="btn btn-primary btn-block" onclick="copyDanaNumber()" style="width: 100%; max-width: 280px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+								<i class="icon-clipboard"></i> Salin Nomor DANA
+							</button>
+							<a href="https://wa.me/6289676578475?text=Assalamu%27alaikum%2C%20saya%20ingin%20konfirmasi%20amplop%20digital%20untuk%20acara%20khitanan%20Abdul%20Muiz%20Alfarizi." 
+							   target="_blank" 
+							   class="btn btn-success btn-block" 
+							   style="width: 100%; max-width: 280px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;">
+								<i class="icon-chat"></i> Konfirmasi via WhatsApp
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 8. Lokasi / Google Maps -->
+	<div id="fh5co-map-section" class="fh5co-section fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Lokasi Acara</h2>
+					<p style="font-size: 16px; font-weight: 500; color: #2b3a4a;">Kp. Warung Cikopi RT 06 RW 05, Desa Salebu, Kecamatan Mangunreja, Kabupaten Tasikmalaya</p>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center card-container">
+					<div style="font-size: 50px; color: #dfba6b; margin-bottom: 20px;">
+						<i class="icon-location-2"></i>
+					</div>
+					<p style="color: #666; margin-bottom: 30px;">Klik tombol di bawah ini untuk membuka navigasi rute Google Maps menuju lokasi acara:</p>
+					<a href="https://www.google.com/maps/search/?api=1&query=Kp.%20Warung%20Cikopi%20RT%2006%20RW%2005%20Desa%20Salebu%20Kecamatan%20Mangunreja%20Kabupaten%20Tasikmalaya" 
+					   target="_blank" 
+					   class="btn btn-primary" 
+					   style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+						<i class="icon-location-2"></i> Buka Google Maps
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 9. Foto Kenangan -->
+	<div id="fh5co-gallery" class="fh5co-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<span>Galeri Foto</span>
+					<h2>Foto Kenangan</h2>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center card-container">
+					<div style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-bottom: 15px;">
+						<img src="images/abdul_muiz.jpeg" alt="Abdul Muiz Alfarizi" class="img-responsive" style="width: 100%; height: auto; display: block;">
+					</div>
+					<h3 style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-top: 15px;">Abdul Muiz Alfarizi</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 10. Penutup -->
+	<div id="fh5co-started" class="fh5co-bg">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<!-- <h2>Are You Attending?</h2> -->
-					<p>Merupakan suatu kebahagiaan bagi kami apabila Bpaka/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa terbaik untuk putra kami, atas kehadirannya kami ucapkan terima kasih</p>
+					<p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa terbaik untuk putra kami, atas kehadirannya kami ucapkan terima kasih.</p>
 					<p>Hormat Kami</p>
-					<p><strong>Mimin Muhaemin, S.Pd.I. 
-						<br/>dan 
-						<br/>
-						Ropi Nurul Qolbiah</strong></p>
+					<p><strong>Ade Ahmad Sodik (Sodik Kocleng) <br/>&<br/> Siti Hidayati</strong></p>
 				</div>
 			</div>
-			<!-- <div class="row animate-box">
-				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="name" class="sr-only">Name</label>
-								<input type="name" class="form-control" id="name" placeholder="Name">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
-						</div>
-					</form>
-				</div>
-			</div> -->
 		</div>
 	</div>
 
+	<!-- 11. Footer -->
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
-
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2022 SMK Wikrama 1 Garut.</small> 
-						<small class="block">Designed by <a href="http://smkwikrama1garut.sch.id/" target="_blank">SMK Wikrama 1 Garut</a></small>
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="https://www.instagram.com/smkwikrama1garut/?hl=id"><i class="icon-instagram"></i></a></li>
-							<li><a href="https://web.facebook.com/smkwikrama1garut/"><i class="icon-facebook"></i></a></li>
-							<li><a href="https://smkwikrama1garut.sch.id/"><i class="icon-dribbble"></i></a></li>
-						</ul>
+						<small class="block">&copy; 2026. All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="#" target="_blank">Ardi Salim</a></small>
 					</p>
 				</div>
 			</div>
-
 		</div>
 	</footer>
 	</div>
@@ -591,24 +321,92 @@
 	<script src="js/main.js"></script>
 
 	<script>
-    var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+	// Open invitation and start music
+	function openInvitation() {
+		// Play music
+		const backsound = document.getElementById("backsound");
+		if (backsound) {
+			backsound.play().catch(function(error) {
+				console.log("Audio tidak bisa diputar sebelum interaksi user:", error);
+			});
+		}
+		
+		// Show floating music toggle
+		const musicBtn = document.getElementById("music-toggle");
+		if (musicBtn) {
+			musicBtn.style.display = "flex";
+		}
+		
+		// Hide curtain cover
+		const header = document.getElementById("fh5co-header");
+		if (header) {
+			header.classList.add("fade-out");
+			setTimeout(function() {
+				header.style.display = "none";
+			}, 1000);
+		}
+		
+		// Unlock page scrolling
+		document.body.classList.remove("locked");
+	}
 
-    // default example
+	// Toggle Mute/Unmute
+	function toggleMusic() {
+		const backsound = document.getElementById("backsound");
+		const onIcon = document.getElementById("music-on-icon");
+		const offIcon = document.getElementById("music-off-icon");
+		
+		if (backsound) {
+			if (backsound.paused) {
+				backsound.play();
+				onIcon.style.display = "block";
+				offIcon.style.display = "none";
+			} else {
+				backsound.pause();
+				onIcon.style.display = "none";
+				offIcon.style.display = "block";
+			}
+		}
+	}
+
+	// Copy Function for DANA Number
+	function copyDanaNumber() {
+		var numberText = "089676578475";
+		// Create temporary element to copy from
+		var tempInput = document.createElement("textarea");
+		tempInput.value = numberText;
+		document.body.appendChild(tempInput);
+		tempInput.select();
+		tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+		
+		try {
+			var successful = document.execCommand('copy');
+			if (successful) {
+				alert("Nomor DANA berhasil disalin");
+			} else {
+				// Fallback using navigator.clipboard
+				navigator.clipboard.writeText(numberText).then(function() {
+					alert("Nomor DANA berhasil disalin");
+				});
+			}
+		} catch (err) {
+			navigator.clipboard.writeText(numberText).then(function() {
+				alert("Nomor DANA berhasil disalin");
+			}).catch(function() {
+				alert("Gagal menyalin nomor. Silakan salin secara manual: " + numberText);
+			});
+		}
+		document.body.removeChild(tempInput);
+	}
+
+    // Set countdown timer to June 28, 2026
     simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
-
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
+        year: 2026,
+        month: 6, // June
+        day: 28,
         enableUtc: false
     });
 </script>
 
 	</body>
 </html>
-
