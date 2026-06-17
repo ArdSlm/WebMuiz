@@ -1514,7 +1514,7 @@ form label {
 
 .gototop {
   position: fixed;
-  bottom: 20px;
+  bottom: 90px;
   right: 20px;
   z-index: 999;
   opacity: 0;
@@ -2247,7 +2247,7 @@ body.locked {
 .music-control-btn {
   position: fixed;
   bottom: 25px;
-  left: 25px;
+  right: 25px;
   width: 50px;
   height: 50px;
   border-radius: 50%;

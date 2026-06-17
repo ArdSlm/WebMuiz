@@ -95,11 +95,16 @@
         var spanTag;
 
         if (!parameters.inline) {
+            var daysElt = createCountdownElt(countdown, parameters, 'simply-days-section');
+            var hoursElt = createCountdownElt(countdown, parameters, 'simply-hours-section');
+            var minutesElt = createCountdownElt(countdown, parameters, 'simply-minutes-section');
+            var secondsElt = createCountdownElt(countdown, parameters, 'simply-seconds-section');
+
             return {
-                days: createCountdownElt(countdown, parameters, 'simply-days-section'),
-                hours: createCountdownElt(countdown, parameters, 'simply-hours-section'),
-                minutes: createCountdownElt(countdown, parameters, 'simply-minutes-section'),
-                seconds: createCountdownElt(countdown, parameters, 'simply-seconds-section')
+                days: daysElt,
+                hours: hoursElt,
+                minutes: minutesElt,
+                seconds: secondsElt
             };
         }
 
@@ -122,7 +127,7 @@
                 minutes: 0,
                 seconds: 0,
                 words: {
-                    days: 'Hari',
+                    days: 'Hari Lagi',
                     hours: 'Jam',
                     minutes: 'Menit',
                     seconds: 'Detik',
